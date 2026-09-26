@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>GiftOfTheGivers.Helpers</RootNamespace>
+    <AssemblyName>GiftOfTheGivers.Helpers</AssemblyName>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+
+    <PackageId>GiftOfTheGivers.Helpers</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Gift of the Givers Dev Team</Authors>
+    <Company>Gift of the Givers Foundation</Company>
+    <Description>Reusable helpers for the Gift of the Givers platform: donation calculations, tax-certificate formatting, currency formatting.</Description>
+    <PackageTags>giftofthegivers;helpers;donations</PackageTags>
+  </PropertyGroup>
+
+</Project>

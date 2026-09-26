@@ -1,0 +1,70 @@
+﻿@model HomeViewModel
+@{
+    ViewData["Title"] = "Home";
+    var updates = ViewBag.LatestUpdates as List<GiftOfTheGivers.Web.Models.ReliefUpdate>;
+}
+
+<div class="hero text-center">
+    <div class="container">
+        <h1 class="display-4 fw-bold">Bringing Hope to Communities</h1>
+        <p class="lead">Gift of the Givers Foundation provides emergency assistance and disaster relief across South Africa and beyond.</p>
+        <a class="btn btn-gotg btn-lg me-2" asp-controller="Donation" asp-action="Create">Donate Now</a>
+        <a class="btn btn-outline-light btn-lg" asp-controller="Volunteer" asp-action="Create">Become a Volunteer</a>
+    </div>
+</div>
+
+<div class="container my-5">
+    <div class="row text-center">
+        <div class="col-md-3 mb-3">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h3 class="text-primary">@Model.TotalDonations</h3><p class="mb-0">Donations</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-3">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h3 class="text-primary">R @Model.TotalRaised.ToString("N2")</h3><p class="mb-0">Raised</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-3">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h3 class="text-primary">@Model.ActiveVolunteers</h3><p class="mb-0">Volunteers</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-3">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h3 class="text-primary">@Model.ActiveProjects</h3><p class="mb-0">Active Projects</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="mt-5 mb-3">Latest Relief Updates</h2>
+    @if (updates != null && updates.Any())
+    {
+        <div class="row">
+            @foreach (var u in updates)
+            {
+                <div class="col-md-4 mb-3">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">@u.Title</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">@u.PostedAt.ToString("dd MMM yyyy")</h6>
+                            <p class="card-text">@u.Description</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <p class="text-muted">No relief updates yet. Check back soon.</p>
+    }
+</div>

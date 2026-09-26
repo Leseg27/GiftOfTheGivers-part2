@@ -1,0 +1,19 @@
+﻿@model Donation
+@{
+    ViewData["Title"] = "Thank You";
+}
+<div class="container my-5" style="max-width:640px">
+    <div class="alert alert-success">
+        <h2 class="mb-0">Thank you for your donation!</h2>
+    </div>
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <p><strong>Amount:</strong> @Model.Amount.ToString("N2") @Model.Currency</p>
+            <p><strong>Frequency:</strong> @Model.Frequency</p>
+            <p><strong>Donor:</strong> @(Model.IsAnonymous ? "Anonymous" : Model.DonorName)</p>
+            <p><strong>Tax Certificate Number:</strong> <code>@Model.TaxCertificateNumber</code></p>
+            <p><strong>Date:</strong> @Model.CreatedAt.ToString("dd MMM yyyy HH:mm")</p>
+        </div>
+    </div>
+    <a class="btn btn-gotg mt-3" asp-controller="Home" asp-action="Index">Back to Home</a>
+</div>

@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Volunteer>
+@{
+    ViewData["Title"] = "Volunteers";
+}
+<div class="container my-5">
+    <h1 class="text-primary">Volunteer Registrations</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Name</th>
+                <th>Skills</th>
+                <th>Availability</th>
+                <th>Email</th>
+                <th>Phone</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var v in Model)
+            {
+                <tr>
+                    <td>@v.SubmittedAt.ToString("yyyy-MM-dd")</td>
+                    <td>@v.FullName</td>
+                    <td>@v.Skills</td>
+                    <td>@v.Availability</td>
+                    <td>@v.Email</td>
+                    <td>@v.Phone</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

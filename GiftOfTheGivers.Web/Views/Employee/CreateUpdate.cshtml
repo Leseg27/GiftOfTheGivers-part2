@@ -1,0 +1,45 @@
+﻿@model ReliefUpdateViewModel
+@{
+    ViewData["Title"] = "Post Relief Update";
+    var projects = ViewBag.Projects as IEnumerable<GiftOfTheGivers.Web.Models.ReliefProject>;
+}
+<div class="container my-5" style="max-width:640px">
+    <h1 class="text-primary">Post a Relief Update</h1>
+
+    <form asp-action="CreateUpdate" method="post" class="mt-4">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="mb-3">
+            <label asp-for="Title" class="form-label"></label>
+            <input asp-for="Title" class="form-control" />
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Description" class="form-label"></label>
+            <textarea asp-for="Description" class="form-control" rows="5"></textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="ReliefProjectId" class="form-label"></label>
+            <select asp-for="ReliefProjectId" class="form-select">
+                <option value="">— None —</option>
+                @if (projects != null)
+                {
+                    foreach (var p in projects)
+                    {
+                        <option value="@p.Id">@p.Title</option>
+                    }
+                }
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-gotg btn-lg w-100">Post Update</button>
+        <a asp-action="Dashboard" class="btn btn-link mt-2">Cancel</a>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Gift of the Givers</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <style>
+        :root { --gotg-primary: #005b96; --gotg-accent: #e63946; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .navbar-gotg { background-color: var(--gotg-primary) !important; }
+        .navbar-gotg .navbar-brand, .navbar-gotg .nav-link { color: #fff !important; }
+        .navbar-gotg .nav-link:hover { color: #ffd166 !important; }
+        .btn-gotg { background-color: var(--gotg-accent); color: #fff; border: none; }
+        .btn-gotg:hover { background-color: #c92e3b; color: #fff; }
+        .hero { background: linear-gradient(135deg, var(--gotg-primary), #003d66); color: #fff; padding: 4rem 0; }
+        footer { background-color: #222; color: #bbb; padding: 1.5rem 0; margin-top: 3rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-gotg">
+            <div class="container">
+                <a class="navbar-brand fw-bold" asp-controller="Home" asp-action="Index">
+                    🌍 Gift of the Givers
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="nav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="About">About</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Donation" asp-action="Create">Donate</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Volunteer" asp-action="Create">Volunteer</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                        @if (User.IsInRole("Employee"))
+                        {
+                            <li class="nav-item"><a class="nav-link" asp-controller="Employee" asp-action="Dashboard">Employee</a></li>
+                        }
+                    </ul>
+                    <partial name="_LoginPartial" />
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main role="main">
+        @RenderBody()
+    </main>
+    <footer>
+        <div class="container text-center">
+            &copy; @DateTime.UtcNow.Year — Gift of the Givers Foundation | Bringing Hope to Communities
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

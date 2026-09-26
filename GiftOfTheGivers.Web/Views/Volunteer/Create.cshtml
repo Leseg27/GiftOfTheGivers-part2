@@ -1,0 +1,48 @@
+﻿@model VolunteerViewModel
+@{
+    ViewData["Title"] = "Become a Volunteer";
+}
+<div class="container my-5" style="max-width:640px">
+    <h1 class="text-primary">Become a Volunteer</h1>
+    <p class="text-muted">Join our network of volunteers making a difference.</p>
+
+    <form asp-action="Create" method="post" class="mt-4">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="mb-3">
+            <label asp-for="FullName" class="form-label"></label>
+            <input asp-for="FullName" class="form-control" />
+            <span asp-validation-for="FullName" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Skills" class="form-label"></label>
+            <textarea asp-for="Skills" class="form-control" rows="3" placeholder="e.g. First aid, logistics, driving"></textarea>
+            <span asp-validation-for="Skills" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Availability" class="form-label"></label>
+            <input asp-for="Availability" class="form-control" placeholder="e.g. Weekends, Evenings" />
+            <span asp-validation-for="Availability" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Email" class="form-label"></label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Phone" class="form-label"></label>
+            <input asp-for="Phone" class="form-control" />
+            <span asp-validation-for="Phone" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-gotg btn-lg w-100">Register as Volunteer</button>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
