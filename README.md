@@ -1,7 +1,7 @@
 
 # 🌍 Gift of the Givers Foundation — Platform
 
-[![Build Status](https://dev.azure.com/YOUR-ORG/GiftOfTheGivers/_apis/build/status/YOUR-PIPELINE-ID?branchName=main)](https://dev.azure.com/YOUR-ORG/GiftOfTheGivers/_build/latest?definitionId=YOUR-PIPELINE-ID&branchName=main)
+(https://dev.azure.com/YOUR-ORG/GiftOfTheGivers/_apis/build/status/YOUR-PIPELINE-ID?branchName=main)](https://dev.azure.com/YOUR-ORG/GiftOfTheGivers/_build/latest?definitionId=YOUR-PIPELINE-ID&branchName=main)
 
 A **humanitarian aid platform** built on **ASP.NET Core 8**, **Azure Functions**, **SQL Server**, and **Azure DevOps CI/CD**. The platform supports emergency disaster-relief operations for Gift of the Givers Foundation by enabling donations, volunteer coordination, and employee-managed relief updates.
 
