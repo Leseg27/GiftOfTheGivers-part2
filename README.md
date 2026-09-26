@@ -124,6 +124,25 @@ Gift of the Givers Foundation is a South African humanitarian organisation that 
 - `POST /api/donations/process` — Azure Function validates donations, calculates annualised totals, generates tax-certificate numbers, and returns structured responses with proper HTTP status codes.
 
 ---
+### Test Accounts
+
+The database is seeded on first run with two development accounts, one for each role. Use these to test the Employee and Donor experiences.
+
+| Role | Email | Password | Access |
+|------|-------|----------|--------|
+| **Employee** | `employee@giftofthegivers.org` | `Employee@123` | Employee dashboard, view all donations, view all volunteers, post relief updates |
+| **Donor** | `donor@giftofthegivers.org` | `Donor@123` | Make donations, view own donation history |
+
+> **⚠️ Security note:** These credentials exist **only for local development and demonstration**. In a production deployment they would be removed, and roles would be assigned manually by a system administrator. Never commit real credentials to source control.
+
+**How to log in:**
+
+1. Navigate to `/Identity/Account/Login`
+2. Enter the Employee or Donor email and password above
+3. After logging in as **Employee**, an **Employee** link appears in the navbar
+4. After logging in as **Donor**, the Employee link is hidden (authorisation enforced)
+
+**Registration:** New donor accounts can be created via `/Identity/Account/Register`. New accounts are assigned the **Donor** role by default.
 
 ## Screenshots
 
