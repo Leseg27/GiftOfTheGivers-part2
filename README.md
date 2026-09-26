@@ -1,15 +1,4 @@
-# Professional README.md for Gift of the Givers Foundation 🎨
 
-Here's a polished, well-structured README that includes your screenshots, a build badge placeholder, and everything the spec expects. Copy it verbatim into `C:\Dev\GiftOfTheGivers\README.md`.
-
----
-
-## 📋 Replace Your README With This
-
-```powershell
-cd C:\Dev\GiftOfTheGivers
-
-@'
 # 🌍 Gift of the Givers Foundation — Platform
 
 [![Build Status](https://dev.azure.com/YOUR-ORG/GiftOfTheGivers/_apis/build/status/YOUR-PIPELINE-ID?branchName=main)](https://dev.azure.com/YOUR-ORG/GiftOfTheGivers/_build/latest?definitionId=YOUR-PIPELINE-ID&branchName=main)
